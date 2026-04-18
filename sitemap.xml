@@ -106,4 +106,16 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog / Educational Resources -->
+  <url>
+    <loc>https://peptidesandhormones.com/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://peptidesandhormones.com/blog/signs-of-low-testosterone</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
