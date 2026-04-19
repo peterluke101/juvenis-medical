@@ -107,6 +107,24 @@
       margin-top: 7px; transition: background .2s; align-self: flex-start;
     }
     .jv-action:hover { background: #D4A347 !important; }
+    .jv-input-area {
+      border-top: 1px solid #252836; padding: 10px 12px;
+      display: flex; gap: 8px; flex-shrink: 0; background: #13151C;
+    }
+    .jv-input {
+      flex: 1; background: #1C1F2E; border: 1px solid #2E3245;
+      border-radius: 20px; padding: 8px 14px; color: #E8EAF0;
+      font-family: inherit; font-size: 13px; outline: none; transition: border-color .2s;
+    }
+    .jv-input::placeholder { color: #4A5168; }
+    .jv-input:focus { border-color: rgba(201,150,58,.4); }
+    .jv-send {
+      width: 34px; height: 34px; border-radius: 50%; background: #C9963A;
+      border: none; cursor: pointer; display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0; transition: background .2s;
+    }
+    .jv-send:hover { background: #D4A347; }
+    .jv-send svg { width: 15px; height: 15px; }
   `;
 
   // ── FLOWS ─────────────────────────────────────────────────────────────────
@@ -213,6 +231,71 @@
     };
   }
 
+  // ── KEYWORD MATCHING ──────────────────────────────────────────────────────
+  function matchKeyword(text) {
+    const t = text.toLowerCase();
+    if (/qualify|fit\b|eligible|candidate|right for me/.test(t)) return 'qualify';
+    if (/how.*(work|process|step)|what.*process/.test(t)) return 'process';
+    if (/after.*(book|submit|form)|what happen/.test(t)) return 'afterbook';
+    if (/peptide|bpc|sermorelin|ipamorelin|cjc|nad\+?|growth hormone/.test(t)) return 'peptides';
+    if (/testosterone|trt|low t\b|low testosterone/.test(t)) return 'trt';
+    if (/weight.?loss|lose weight|glp|semaglutide|tirzepatide|ozempic|wegovy/.test(t)) return 'wtloss';
+    if (/bhrt|menopause|perimenopause|estrogen|progesterone|women.*hormone|female hormone/.test(t)) return 'bhrt';
+    if (/cost|price|pricing|how much|expensive|afford|pay\b|insurance|hsa|fsa|cash/.test(t)) return 'costs';
+    if (/book|schedul|appoint|consult|get started|sign up|ready\b/.test(t)) return 'book';
+    if (/telehealth|remote|online.*visit|my state|nationwide|florida|which state/.test(t)) return 'services';
+    if (/service|what.*offer|what.*treat|what.*do you|available/.test(t)) return 'services';
+    if (/dr\.?\s*paul|about.*doctor|who is|credential|background|experience/.test(t)) return 'about';
+    return null;
+  }
+
+  function showFallback() {
+    const msgs = document.getElementById('jv-msgs');
+    const bubble = document.createElement('div');
+    bubble.className = 'jv-bubble bot';
+    bubble.textContent = "Good question — that one is best answered by Dr. Paul directly. The free 15-min consultation is the right place to ask.";
+    msgs.appendChild(bubble);
+    const a = document.createElement('a');
+    a.className = 'jv-action';
+    a.href = base + 'contact.html';
+    a.textContent = 'Book Free Consultation →';
+    msgs.appendChild(a);
+    const qrs = document.createElement('div');
+    qrs.className = 'jv-qrs';
+    const btn = document.createElement('button');
+    btn.className = 'jv-qr';
+    btn.textContent = 'Start over';
+    btn.addEventListener('click', () => {
+      msgs.querySelectorAll('.jv-qrs').forEach(el => el.remove());
+      const ub = document.createElement('div');
+      ub.className = 'jv-bubble user';
+      ub.textContent = 'Start over';
+      msgs.appendChild(ub);
+      setTimeout(() => showFlow('start'), 280);
+    });
+    qrs.appendChild(btn);
+    msgs.appendChild(qrs);
+    setTimeout(() => { msgs.scrollTop = msgs.scrollHeight; }, 60);
+  }
+
+  function handleInput() {
+    const input = document.getElementById('jv-input');
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    const msgs = document.getElementById('jv-msgs');
+    msgs.querySelectorAll('.jv-qrs').forEach(el => el.remove());
+    const ub = document.createElement('div');
+    ub.className = 'jv-bubble user';
+    ub.textContent = text;
+    msgs.appendChild(ub);
+    msgs.scrollTop = msgs.scrollHeight;
+    setTimeout(() => {
+      const match = matchKeyword(text);
+      if (match) { showFlow(match); } else { showFallback(); }
+    }, 280);
+  }
+
   // ── INIT ──────────────────────────────────────────────────────────────────
   function init() {
     const style = document.createElement('style');
@@ -243,12 +326,24 @@
         </div>
         <div class="jv-disclaimer">ℹ️ General information only &nbsp;·&nbsp; Not medical advice</div>
         <div class="jv-msgs" id="jv-msgs"></div>
+        <div class="jv-input-area">
+          <input type="text" class="jv-input" id="jv-input" placeholder="Type a question..." autocomplete="off" maxlength="200">
+          <button class="jv-send" id="jv-send-btn" aria-label="Send message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
       </div>
     `;
     document.body.appendChild(wrap);
 
     document.getElementById('jv-chat-btn').addEventListener('click', toggle);
     document.getElementById('jv-close-btn').addEventListener('click', toggle);
+    document.getElementById('jv-send-btn').addEventListener('click', handleInput);
+    document.getElementById('jv-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') handleInput();
+    });
 
     showFlow('start');
   }
