@@ -52,6 +52,12 @@
 .footer-built { font-size: 0.72rem; color: rgba(255,255,255,0.28); margin-top: 0.25rem; }
 .footer-built a { color: rgba(255,255,255,0.28); text-decoration: none; }
 .footer-built a:hover { color: rgba(255,255,255,0.5); }
+.result-next{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.25rem;text-align:left;margin-bottom:1.25rem}
+.result-next h4{font-size:.72rem;font-weight:700;color:var(--text);margin-bottom:.8rem;text-transform:uppercase;letter-spacing:.07em}
+.next-step-list{display:flex;flex-direction:column;gap:.55rem}
+.next-step{display:flex;align-items:flex-start;gap:.7rem;font-size:.78rem;color:var(--text2);line-height:1.5}
+.next-step-num{width:20px;height:20px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);font-size:.62rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.next-step strong{color:var(--text)}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVTYLQHYQN"></script>
@@ -173,6 +179,15 @@
           <h4>Recommended Starting Point</h4>
           <p>A free 15-minute consultation with Dr. Paul to discuss your goals, explain the blood panel process, and answer your questions. No commitment required.</p>
         </div>
+        <div class="result-next">
+          <h4>What happens next</h4>
+          <div class="next-step-list">
+            <div class="next-step"><span class="next-step-num">1</span><div><strong>Confirmation email</strong> — You'll receive a short intake form within 24 hours.</div></div>
+            <div class="next-step"><span class="next-step-num">2</span><div><strong>Complete your forms</strong> — Takes about 5 minutes at your own pace.</div></div>
+            <div class="next-step"><span class="next-step-num">3</span><div><strong>Dr. Paul reviews your info</strong> — He comes prepared so your consult time counts.</div></div>
+            <div class="next-step"><span class="next-step-num">4</span><div><strong>Clinic follows up</strong> — Next steps, labs, and your protocol coordinated for you.</div></div>
+          </div>
+        </div>
         <div class="result-actions">
           <a href="contact.html" class="btn btn-gold" style="width:100%;text-align:center;padding:1rem">Book Free Consultation →</a>
           <a href="services/" style="font-size:.82rem;color:var(--text2);margin-top:.25rem">Browse all services first</a>
@@ -190,6 +205,15 @@
           <h4>Your Options</h4>
           <p><strong style="color:var(--text)">Available to you remotely:</strong> Peptides, Medical Weight Loss, Women's BHRT<br><br><strong style="color:var(--text)">Requires in-person visit:</strong> Testosterone Therapy (TRT), full men's hormone panel</p>
         </div>
+        <div class="result-next">
+          <h4>What happens next</h4>
+          <div class="next-step-list">
+            <div class="next-step"><span class="next-step-num">1</span><div><strong>Confirmation email</strong> — You'll receive a short intake form within 24 hours.</div></div>
+            <div class="next-step"><span class="next-step-num">2</span><div><strong>Complete your forms</strong> — Takes about 5 minutes at your own pace.</div></div>
+            <div class="next-step"><span class="next-step-num">3</span><div><strong>Dr. Paul reviews your info</strong> — He comes prepared so your consult time counts.</div></div>
+            <div class="next-step"><span class="next-step-num">4</span><div><strong>Clinic follows up</strong> — Next steps, labs, and your protocol coordinated for you.</div></div>
+          </div>
+        </div>
         <div class="result-actions">
           <a href="contact.html" class="btn btn-gold" style="width:100%;text-align:center;padding:1rem">Book Free Consultation →</a>
           <a href="services/peptides.html" style="font-size:.82rem;color:var(--text2);margin-top:.25rem">Explore Peptide Therapy</a>
@@ -206,6 +230,15 @@
         <div class="result-detail">
           <h4>Fort Lauderdale Clinic</h4>
           <p>1164 E. Oakland Park Blvd., Suite #202, Oakland Park, FL 33334<br>Mon–Fri 8am–5pm · Sat by appointment · (954) 982-8378</p>
+        </div>
+        <div class="result-next">
+          <h4>What happens next</h4>
+          <div class="next-step-list">
+            <div class="next-step"><span class="next-step-num">1</span><div><strong>Confirmation email</strong> — You'll receive a short intake form within 24 hours.</div></div>
+            <div class="next-step"><span class="next-step-num">2</span><div><strong>Complete your forms</strong> — Takes about 5 minutes at your own pace.</div></div>
+            <div class="next-step"><span class="next-step-num">3</span><div><strong>Dr. Paul reviews your info</strong> — He comes prepared so your consult time counts.</div></div>
+            <div class="next-step"><span class="next-step-num">4</span><div><strong>Clinic follows up</strong> — Next steps, labs, and your protocol coordinated for you.</div></div>
+          </div>
         </div>
         <div class="result-actions">
           <a href="contact.html" class="btn btn-gold" style="width:100%;text-align:center;padding:1rem">Book Free Consultation →</a>
@@ -282,5 +315,6 @@ function showResult() {
   window.scrollTo(0, 0);
 }
 </script>
+<script src="chat-widget.js"></script>
 </body>
 </html>
