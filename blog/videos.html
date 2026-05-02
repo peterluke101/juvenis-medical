@@ -12,18 +12,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../jv-styles.css">
 <style>
-.video-block{margin-bottom:4.5rem;max-width:900px}
+.video-block{margin-bottom:4.5rem;max-width:1000px}
 .video-title{font-family:'Space Grotesk',sans-serif;font-size:1.55rem;color:var(--text);margin-bottom:.65rem;font-weight:600;line-height:1.3}
 .video-meta{display:flex;flex-wrap:wrap;gap:1.25rem;font-size:.76rem;color:var(--text3);margin-bottom:1rem}
 .video-meta strong{color:var(--text2);font-weight:600}
-.video-desc{font-size:.93rem;color:var(--text2);line-height:1.7;margin-bottom:1.5rem}
-.player-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border)}
-.player-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.player-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;color:var(--text3);font-size:.85rem}
-.player-placeholder strong{display:block;color:var(--text2);font-family:'Space Grotesk',sans-serif;font-size:1rem;margin-bottom:.5rem}
-.player-placeholder code{background:var(--surface2);padding:.15rem .45rem;border-radius:4px;color:var(--gold);font-size:.78rem}
+.video-desc{font-size:.93rem;color:var(--text2);line-height:1.7;margin-bottom:1.5rem;max-width:720px}
 
-.video-steps{margin-top:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem}
+.video-row{display:grid;grid-template-columns:340px 1fr;gap:2rem;align-items:start}
+@media (max-width:720px){.video-row{grid-template-columns:1fr;max-width:380px}}
+
+.player-frame{position:relative;width:100%;aspect-ratio:9/16;background:#000;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border)}
+.player-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+.video-steps{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem}
 .video-steps-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:.75rem}
 .video-steps ol{margin:0;padding-left:1.25rem;font-size:.85rem;color:var(--text2);line-height:1.75}
 .video-steps li{margin-bottom:.25rem}
@@ -51,9 +52,9 @@
     "@type": "VideoObject",
     "name": "How to Self-Inject a Peptide — Step-by-Step with Dr. Paul",
     "description": "Dr. Paul Goodkin demonstrates how to safely prepare and self-administer a subcutaneous peptide injection at home.",
-    "thumbnailUrl": "https://i.ytimg.com/vi/REPLACE_WITH_PEPTIDE_VIDEO_ID/maxresdefault.jpg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/CGvnAvBGNlI/maxresdefault.jpg",
     "uploadDate": "2026-05-02",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/REPLACE_WITH_PEPTIDE_VIDEO_ID",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/CGvnAvBGNlI",
     "publisher": {"@type":"Organization","name":"Juvenis Medical","url":"https://peptidesandhormones.com/"}
   },
   {
@@ -61,9 +62,9 @@
     "@type": "VideoObject",
     "name": "How to Self-Administer TRT — Full Demonstration with Dr. Paul",
     "description": "Dr. Paul Goodkin walks through the complete process of weekly testosterone replacement therapy injections, including dose preparation, site selection, and proper technique.",
-    "thumbnailUrl": "https://i.ytimg.com/vi/REPLACE_WITH_TRT_VIDEO_ID/maxresdefault.jpg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/gCfO0CWDFgw/maxresdefault.jpg",
     "uploadDate": "2026-05-02",
-    "embedUrl": "https://www.youtube-nocookie.com/embed/REPLACE_WITH_TRT_VIDEO_ID",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/gCfO0CWDFgw",
     "publisher": {"@type":"Organization","name":"Juvenis Medical","url":"https://peptidesandhormones.com/"}
   }
 ]
@@ -95,35 +96,30 @@
       <span class="label">Peptide Therapy</span>
       <h2 class="video-title">How to Self-Inject a Peptide — Step-by-Step with Dr. Paul</h2>
       <div class="video-meta">
-        <span><strong>Runtime:</strong> ~XX min</span>
         <span><strong>Best for:</strong> Patients starting BPC-157, Sermorelin, Ipamorelin/CJC-1295, or other subcutaneous peptides</span>
       </div>
       <p class="video-desc">Dr. Paul demonstrates the full process of preparing and self-administering a subcutaneous peptide injection at home — from reconstituting the vial to selecting the injection site to safely disposing of the needle. Watch this before your first dose.</p>
 
-      <div class="player-frame">
-        <!-- After upload: replace REPLACE_WITH_PEPTIDE_VIDEO_ID with the YouTube ID (the 11-character code from the unlisted video URL) -->
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/REPLACE_WITH_PEPTIDE_VIDEO_ID?rel=0&modestbranding=1"
-          title="How to Self-Inject a Peptide — Demonstration by Dr. Paul Goodkin, Juvenis Medical"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy"></iframe>
-        <div class="player-placeholder">
-          <strong>Video embed placeholder</strong>
-          Replace <code>REPLACE_WITH_PEPTIDE_VIDEO_ID</code> in the <code>iframe</code> source with your YouTube video ID.
+      <div class="video-row">
+        <div class="player-frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/CGvnAvBGNlI?rel=0&modestbranding=1"
+            title="How to Self-Inject a Peptide — Demonstration by Dr. Paul Goodkin, Juvenis Medical"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
         </div>
-      </div>
-
-      <div class="video-steps">
-        <div class="video-steps-title">What you'll see in this video</div>
-        <ol>
-          <li>Supplies checklist and sterile setup</li>
-          <li>Reconstituting the peptide with bacteriostatic water</li>
-          <li>Drawing the prescribed dose into the syringe</li>
-          <li>Choosing and prepping the subcutaneous injection site</li>
-          <li>Performing the injection</li>
-          <li>Safe needle disposal and storage of remaining medication</li>
-        </ol>
+        <div class="video-steps">
+          <div class="video-steps-title">What you'll see in this video</div>
+          <ol>
+            <li>Supplies checklist and sterile setup</li>
+            <li>Reconstituting the peptide with bacteriostatic water</li>
+            <li>Drawing the prescribed dose into the syringe</li>
+            <li>Choosing and prepping the subcutaneous injection site</li>
+            <li>Performing the injection</li>
+            <li>Safe needle disposal and storage of remaining medication</li>
+          </ol>
+        </div>
       </div>
     </div>
 
@@ -132,34 +128,30 @@
       <span class="label">Hormones & TRT</span>
       <h2 class="video-title">How to Self-Administer TRT — Full Demonstration with Dr. Paul</h2>
       <div class="video-meta">
-        <span><strong>Runtime:</strong> ~XX min</span>
         <span><strong>Best for:</strong> Patients on weekly testosterone cypionate or enanthate intramuscular protocols</span>
       </div>
       <p class="video-desc">A complete walkthrough of weekly testosterone replacement therapy injections — drawing the correct dose, choosing between intramuscular sites (deltoid, glute, quad), proper injection technique, and what to do if you miss a dose. Recommended viewing before your first self-administered injection.</p>
 
-      <div class="player-frame">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/REPLACE_WITH_TRT_VIDEO_ID?rel=0&modestbranding=1"
-          title="How to Self-Administer TRT — Demonstration by Dr. Paul Goodkin, Juvenis Medical"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy"></iframe>
-        <div class="player-placeholder">
-          <strong>Video embed placeholder</strong>
-          Replace <code>REPLACE_WITH_TRT_VIDEO_ID</code> in the <code>iframe</code> source with your YouTube video ID.
+      <div class="video-row">
+        <div class="player-frame">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/gCfO0CWDFgw?rel=0&modestbranding=1"
+            title="How to Self-Administer TRT — Demonstration by Dr. Paul Goodkin, Juvenis Medical"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"></iframe>
         </div>
-      </div>
-
-      <div class="video-steps">
-        <div class="video-steps-title">What you'll see in this video</div>
-        <ol>
-          <li>Weekly TRT supplies and dose verification</li>
-          <li>Drawing testosterone cypionate / enanthate from the vial</li>
-          <li>Switching to the injection needle and removing air</li>
-          <li>Intramuscular site rotation: deltoid, glute, and quad</li>
-          <li>Injection technique and aspiration guidance</li>
-          <li>What to do if you miss a dose, and when to call the office</li>
-        </ol>
+        <div class="video-steps">
+          <div class="video-steps-title">What you'll see in this video</div>
+          <ol>
+            <li>Weekly TRT supplies and dose verification</li>
+            <li>Drawing testosterone cypionate / enanthate from the vial</li>
+            <li>Switching to the injection needle and removing air</li>
+            <li>Intramuscular site rotation: deltoid, glute, and quad</li>
+            <li>Injection technique and aspiration guidance</li>
+            <li>What to do if you miss a dose, and when to call the office</li>
+          </ol>
+        </div>
       </div>
     </div>
 
