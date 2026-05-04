@@ -12,16 +12,35 @@
 <style>
 /* ── HOME-SPECIFIC ── */
 .hero{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding:calc(var(--nav-h) + 4rem) 1.5rem 5rem;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 70% at 65% 35%,rgba(201,150,58,.07) 0%,transparent 65%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
-.hero-inner{max-width:var(--max-w);margin:0 auto;width:100%}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 70% at 65% 35%,rgba(201,150,58,.07) 0%,transparent 65%);pointer-events:none;z-index:1}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);z-index:2}
+.hero-bg-image{position:absolute;top:0;right:0;bottom:0;width:50%;background-image:url('images/hero-helix-desktop.png');background-size:contain;background-position:right center;background-repeat:no-repeat;opacity:1;z-index:0;pointer-events:none}
+.hero-bg-image::after{display:none}
+@media(max-width:900px){
+  .hero-bg-image{top:auto;left:auto;right:0;bottom:0;width:55%;height:75%;background-image:url('images/hero-helix-only.png');background-position:right bottom;background-size:contain;background-repeat:no-repeat;opacity:1;-webkit-mask-image:none;mask-image:none}
+  .hero-bg-image::after{display:none}
+}
+.hero-inner{max-width:var(--max-w);margin:0 auto;width:100%;position:relative;z-index:3}
 .hero h1{max-width:780px;margin-bottom:1.5rem}
-.hero h1 em{font-style:normal;color:var(--gold)}
+.hero h1 em{font-style:normal;color:#3DE8F0}
 .hero-sub{font-size:1.05rem;max-width:520px;margin-bottom:2.5rem}
 .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center;margin-bottom:3.5rem}
 .hero-trust{display:flex;flex-wrap:wrap;gap:1.25rem;padding-top:2.25rem;border-top:1px solid var(--border)}
 .trust-item{display:flex;align-items:center;gap:.45rem;font-size:.75rem;color:var(--text3);font-weight:500}
-.trust-check{width:18px;height:18px;background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.55rem;color:var(--gold);font-weight:800;flex-shrink:0}
+.trust-check{width:18px;height:18px;background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0}
+.trust-check svg{width:10px;height:10px;stroke:currentColor;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.trust-check.teal{background:var(--teal-dim);border-color:var(--teal-border);color:var(--teal-light)}
+@media(max-width:600px){
+  .hero{padding:calc(var(--nav-h) + 2.5rem) 1.25rem 3rem;min-height:auto}
+  .hero h1{font-size:clamp(2rem,9vw,2.6rem);margin-bottom:1rem;max-width:100%}
+  .hero-sub{font-size:.95rem;margin-bottom:1.75rem;max-width:100%;padding-right:.25rem;color:var(--text2);opacity:1}
+  .hero-actions{margin-bottom:2.25rem;gap:.65rem}
+  .hero-actions .btn{padding:.85rem 1.4rem;font-size:.85rem}
+  .hero-trust{gap:.75rem 1rem;padding-top:1.5rem}
+  .trust-item{font-size:.72rem;flex-basis:100%;color:#FFFFFF;font-weight:600}
+  .pill{margin-bottom:1.25rem}
+  .hero .anim-fade-up{animation:none!important;opacity:1!important;transform:none!important}
+}
 
 /* services grid */
 .services-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden}
@@ -139,8 +158,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <span class="nav-logo-main">Juvenis Medical</span>
-      <span class="nav-logo-sub">Fort Lauderdale</span>
+      <img src="images/logo-horizontal.png" alt="Juvenis Medical" class="nav-logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="services/">Services</a></li>
@@ -164,6 +182,7 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg-image" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="pill anim-fade-up"><div class="pill-dot"></div><span>Now Accepting New Patients</span></div>
     <h1 class="anim-fade-up anim-delay-1">Your Best Years<br>Aren't <em>Behind</em> You.</h1>
@@ -173,11 +192,11 @@
       <a href="services/" class="btn-text">View all services</a>
     </div>
     <div class="hero-trust anim-fade-up anim-delay-4">
-      <div class="trust-item"><div class="trust-check">✓</div>1,000+ patients treated</div>
-      <div class="trust-item"><div class="trust-check">✓</div>20+ years clinical experience</div>
-      <div class="trust-item"><div class="trust-check">✓</div>Peptide telehealth — all 50 states</div>
-      <div class="trust-item"><div class="trust-check">✓</div>TRT telehealth — Florida residents</div>
-      <div class="trust-item"><div class="trust-check">✓</div>No insurance required · No surprises</div>
+      <div class="trust-item"><div class="trust-check"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>1,000+ patients treated</div>
+      <div class="trust-item"><div class="trust-check"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>20+ years clinical experience</div>
+      <div class="trust-item"><div class="trust-check teal"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>Peptide telehealth — all 50 states</div>
+      <div class="trust-item"><div class="trust-check teal"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>TRT telehealth — Florida residents</div>
+      <div class="trust-item"><div class="trust-check"><svg viewBox="0 0 24 24"><polyline points="5 12 10 17 19 7"/></svg></div>No insurance required · No surprises</div>
     </div>
   </div>
 </section>
@@ -418,7 +437,7 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand">Juvenis Medical</div>
+        <img src="images/logo-stacked.png" alt="Juvenis Medical" class="footer-logo-img">
         <div class="footer-tagline">Peptide &amp; Hormone Specialists<br>Fort Lauderdale, Florida</div>
         <div class="footer-contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
