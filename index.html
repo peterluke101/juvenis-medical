@@ -14,7 +14,7 @@
 .hero{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding:calc(var(--nav-h) + 4rem) 1.5rem 5rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 70% at 65% 35%,rgba(201,150,58,.07) 0%,transparent 65%);pointer-events:none;z-index:1}
 .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);z-index:2}
-.hero-bg-image{position:absolute;top:0;right:0;bottom:0;width:50%;background-image:url('images/hero-helix-desktop.png');background-size:contain;background-position:right center;background-repeat:no-repeat;opacity:1;z-index:0;pointer-events:none}
+.hero-bg-image{position:absolute;top:0;right:0;bottom:0;width:50%;background-image:url('images/hero-helix-desktop.png');background-size:contain;background-position:right center;background-repeat:no-repeat;opacity:1;z-index:0;pointer-events:none;-webkit-mask-image:linear-gradient(to right,transparent 0%,black 30%,black 100%);mask-image:linear-gradient(to right,transparent 0%,black 30%,black 100%)}
 .hero-bg-image::after{display:none}
 @media(max-width:900px){
   .hero-bg-image{top:auto;left:auto;right:0;bottom:0;width:55%;height:75%;background-image:url('images/hero-helix-only.png');background-position:right bottom;background-size:contain;background-repeat:no-repeat;opacity:1;-webkit-mask-image:none;mask-image:none}
