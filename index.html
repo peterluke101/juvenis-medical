@@ -100,14 +100,19 @@
 {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
+  "@id": "https://peptidesandhormones.com/#business",
   "name": "Juvenis Medical",
+  "alternateName": "Juvenis Medical LLC",
   "url": "https://peptidesandhormones.com",
-  "logo": "https://peptidesandhormones.com/logo.png",
-  "description": "Peptide therapy, testosterone (TRT), medical weight loss (semaglutide, tirzepatide), BHRT, and men's and women's health in Fort Lauderdale, FL. Nationwide telehealth for non-controlled compounds.",
-  "telephone": "+19549828378",
+  "logo": "https://peptidesandhormones.com/images/logo-stacked.png",
+  "image": "https://peptidesandhormones.com/images/logo-stacked.png",
+  "description": "Peptide therapy, testosterone (TRT), medical weight loss (semaglutide, tirzepatide), BHRT, and men's and women's health in Oakland Park / Fort Lauderdale, FL. Nationwide telehealth for non-controlled peptides; Florida telehealth for hormone therapy.",
+  "telephone": "+1-954-982-8378",
+  "email": "paul@peptidesandhormones.com",
+  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "1164 E. Oakland Park Blvd., Suite #202",
+    "streetAddress": "1164 E. Oakland Park Blvd., Suite 202",
     "addressLocality": "Oakland Park",
     "addressRegion": "FL",
     "postalCode": "33334",
@@ -122,8 +127,13 @@
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
+      "opens": "08:00",
       "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "description": "By appointment only"
     }
   ],
   "areaServed": [
@@ -131,16 +141,96 @@
     {"@type": "Country", "name": "United States"}
   ],
   "medicalSpecialty": [
-    "Peptide Therapy",
-    "Hormone Replacement Therapy",
-    "Medical Weight Loss",
-    "Men's Health",
-    "Women's Health"
+    "Endocrine",
+    "Preventive Medicine",
+    "Internal Medicine"
   ],
-  "priceRange": "$$",
-  "sameAs": [
-    "https://peptidesandhormones.com"
-  ]
+  "knowsAbout": [
+    "Peptide Therapy",
+    "Testosterone Replacement Therapy",
+    "Hormone Replacement Therapy",
+    "BHRT",
+    "Medical Weight Loss",
+    "Semaglutide",
+    "Tirzepatide",
+    "Men's Health",
+    "Women's Health",
+    "Longevity Medicine"
+  ],
+  "founder": {
+    "@type": "Physician",
+    "name": "Dr. Paul Goodkin",
+    "honorificPrefix": "Dr.",
+    "givenName": "Paul",
+    "familyName": "Goodkin",
+    "jobTitle": "Founder",
+    "url": "https://peptidesandhormones.com/about.html",
+    "identifier": [
+      {"@type": "PropertyValue", "propertyID": "NPI", "value": "1083750665"},
+      {"@type": "PropertyValue", "propertyID": "FL License", "value": "CH7998"}
+    ],
+    "alumniOf": "Life Chiropractic College"
+  },
+  "employee": [
+    {
+      "@type": "Physician",
+      "name": "Dr. Paul Goodkin",
+      "honorificPrefix": "Dr.",
+      "jobTitle": "Founder"
+    },
+    {
+      "@type": "Physician",
+      "name": "Dr. Tom Macek, MD",
+      "honorificPrefix": "Dr.",
+      "jobTitle": "Medical Director"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Juvenis Medical Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "MedicalTherapy",
+          "name": "Peptide Therapy",
+          "url": "https://peptidesandhormones.com/services/peptides.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "MedicalTherapy",
+          "name": "Testosterone Replacement Therapy (TRT)",
+          "url": "https://peptidesandhormones.com/services/trt.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "MedicalTherapy",
+          "name": "Bioidentical Hormone Replacement Therapy (BHRT)",
+          "url": "https://peptidesandhormones.com/services/bhrt.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "MedicalTherapy",
+          "name": "Medical Weight Loss (Semaglutide, Tirzepatide)",
+          "url": "https://peptidesandhormones.com/services/weight-loss.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "MedicalTherapy",
+          "name": "Men's Health",
+          "url": "https://peptidesandhormones.com/services/mens-health.html"
+        }
+      }
+    ]
+  }
 }
 </script>
 <!-- Google tag (gtag.js) -->
