@@ -4,6 +4,7 @@
 <link rel="canonical" href="https://peptidesandhormones.com/shop.html" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store, max-age=0">
 <title>Shop — Juvenis Medical</title>
 <meta name="description" content="Official Juvenis Medical & Peptides and Hormones merchandise. Premium branded apparel and accessories featuring our signature gold helix.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,11 +33,9 @@
 .shop-section{padding:2rem 1.5rem 5rem}
 .shop-inner{max-width:var(--max-w);margin:0 auto}
 
-.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;align-items:stretch;grid-auto-rows:minmax(0,auto)}
-@media(max-width:900px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}}
-@media(max-width:520px){.product-grid{grid-template-columns:minmax(0,1fr)}}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
 
-.product-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;display:flex;flex-direction:column;position:relative;min-width:0;min-height:0}
+.product-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;display:flex;flex-direction:column;position:relative}
 .product-card:hover{transform:translateY(-4px);border-color:var(--gold-border);box-shadow:var(--shadow-gold)}
 .product-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
 .product-card:hover::after{transform:scaleX(1)}
