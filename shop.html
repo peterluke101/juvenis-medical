@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="canonical" href="https://peptidesandhormones.com/shop.html" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-store, max-age=0">
+<title>Shop — Juvenis Medical</title>
+<meta name="description" content="Official Juvenis Medical & Peptides and Hormones merchandise. Premium branded apparel and accessories featuring our signature gold helix.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="jv-styles.css">
+<style>
+/* ── SHOP-SPECIFIC ── */
+.shop-hero{padding:calc(var(--nav-h) + 4rem) 1.5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.shop-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 0%,rgba(201,150,58,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+.shop-hero-inner{max-width:780px;margin:0 auto;position:relative;z-index:1}
+.shop-hero h1{margin-bottom:1.25rem}
+.shop-hero h1 em{font-style:normal;color:var(--gold)}
+.shop-hero p{font-size:1.05rem;max-width:560px;margin:0 auto}
+@media(max-width:600px){
+  .shop-hero{padding:calc(var(--nav-h) + 2.5rem) 1.25rem 2rem}
+  .shop-hero p{font-size:.95rem}
+}
+
+.shop-status{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal-dim);border:1px solid var(--teal-border);border-radius:100px;padding:.4rem 1rem;margin-bottom:1.5rem}
+.shop-status-dot{width:7px;height:7px;background:var(--teal-light);border-radius:50%;animation:pulse 2.2s ease-in-out infinite}
+.shop-status span{font-size:.68rem;font-weight:700;color:var(--teal-light);text-transform:uppercase;letter-spacing:.12em}
+.shop-status.live{background:var(--gold-dim);border-color:var(--gold-border)}
+.shop-status.live .shop-status-dot{background:var(--gold)}
+.shop-status.live span{color:var(--gold)}
+
+.shop-section{padding:2rem 1.5rem 5rem}
+.shop-inner{max-width:var(--max-w);margin:0 auto}
+
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+
+.product-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;display:flex;flex-direction:column;position:relative}
+.product-card:hover{transform:translateY(-4px);border-color:var(--gold-border);box-shadow:var(--shadow-gold)}
+.product-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.product-card:hover::after{transform:scaleX(1)}
+
+.product-media{height:240px;background:var(--surface2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0}
+@media(max-width:520px){.product-media{height:220px}}
+.product-media::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(201,150,58,.05) 0%,transparent 70%);pointer-events:none}
+.product-icon{width:84px;height:84px;color:var(--gold);opacity:.55;transition:opacity .25s,transform .25s;position:relative;z-index:1}
+.product-card:hover .product-icon{opacity:.85;transform:scale(1.06)}
+.product-icon svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.product-badge{position:absolute;top:.85rem;left:.85rem;background:rgba(13,15,20,.85);border:1px solid var(--gold-border);border-radius:6px;padding:.25rem .55rem;font-size:.6rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;backdrop-filter:blur(6px);z-index:2}
+
+.product-body{padding:1.25rem 1.25rem 1.4rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.product-category{font-size:.62rem;font-weight:700;color:var(--teal-light);text-transform:uppercase;letter-spacing:.14em}
+.product-title{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;color:var(--text);line-height:1.25;letter-spacing:-.01em}
+.product-desc{font-size:.78rem;color:var(--text2);line-height:1.55;flex:1}
+.product-foot{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-top:.4rem;padding-top:.85rem;border-top:1px solid var(--border)}
+.product-price{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:var(--gold);letter-spacing:-.01em}
+.product-price .price-soon{font-size:.7rem;color:var(--text3);font-weight:500;letter-spacing:.05em;text-transform:uppercase;font-family:'Inter',sans-serif}
+
+.product-buy{background:var(--gold);color:#0D0F14;font-family:'Inter',sans-serif;font-weight:700;font-size:.74rem;padding:.55rem 1rem;border-radius:8px;border:none;cursor:pointer;transition:all .2s;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+.product-buy:hover:not(:disabled){background:var(--gold-light);transform:translateY(-1px)}
+.product-buy:disabled{background:var(--surface2);color:var(--text3);border:1px solid var(--border2);cursor:not-allowed}
+
+.shopify-mount{min-height:0}
+.shopify-mount:empty{display:none}
+
+.shop-info{margin-top:5rem;padding:2.5rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;text-align:center}
+@media(max-width:760px){.shop-info{grid-template-columns:1fr;padding:2rem 1.5rem;text-align:left}}
+.shop-info-item h4{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.4rem}
+.shop-info-item p{font-size:.78rem;color:var(--text2);line-height:1.6}
+.shop-info-icon{width:36px;height:36px;color:var(--gold);margin:0 auto .75rem;display:flex;align-items:center;justify-content:center}
+@media(max-width:760px){.shop-info-icon{margin-left:0}}
+.shop-info-icon svg{width:100%;height:100%;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-horizontal.png" alt="Juvenis Medical" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="services/">Services</a></li>
+      <li><a href="blog/">Learn</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#process">How It Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+    </ul>
+    <a href="start.html" class="nav-cta">See If You Qualify</a>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-mobile').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile">
+  <a href="services/">Services</a>
+  <a href="blog/">Learn</a>
+  <a href="about.html">About</a>
+  <a href="index.html#process">How It Works</a>
+  <a href="contact.html">Contact</a>
+  <a href="shop.html">Shop</a>
+  <a href="start.html" class="btn btn-gold">See If You Qualify →</a>
+</div>
+
+<!-- HERO -->
+<section class="shop-hero">
+  <div class="shop-hero-inner">
+    <div class="shop-status" id="shop-status">
+      <div class="shop-status-dot"></div>
+      <span id="shop-status-label">Coming Soon</span>
+    </div>
+    <h1>Wear the <em>Helix</em></h1>
+    <p>Official Juvenis Medical merchandise — premium branded apparel and accessories featuring the gold helix on signature dark navy.</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="shop-section">
+  <div class="shop-inner">
+    <div class="product-grid" id="product-grid">
+      <!-- Water Bottle -->
+      <article class="product-card" data-product="water-bottle">
+        <div class="product-media">
+          <div class="product-badge">New</div>
+          <div class="product-icon">
+            <svg viewBox="0 0 64 64"><path d="M24 4h16v6c0 2-1 3-2 4l-2 2v6h-8v-6l-2-2c-1-1-2-2-2-4V4z"/><path d="M22 22h20l-1.5 32a4 4 0 0 1-4 4h-9a4 4 0 0 1-4-4L22 22z"/><path d="M22 32h20"/></svg>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-category">Drinkware</div>
+          <h3 class="product-title">Helix Stainless Water Bottle</h3>
+          <p class="product-desc">Insulated 24oz bottle with the Juvenis gold helix etched into matte navy.</p>
+          <div class="product-foot">
+            <div class="product-price">$32 <span class="price-soon">est.</span></div>
+            <button class="product-buy" disabled data-buy>Coming Soon</button>
+          </div>
+        </div>
+        <div class="shopify-mount" data-shopify-mount="water-bottle"></div>
+      </article>
+
+      <!-- Coffee Mug -->
+      <article class="product-card" data-product="coffee-mug">
+        <div class="product-media">
+          <div class="product-icon">
+            <svg viewBox="0 0 64 64"><path d="M12 18h36v22a14 14 0 0 1-14 14H26a14 14 0 0 1-14-14V18z"/><path d="M48 24h6a6 6 0 0 1 6 6v4a6 6 0 0 1-6 6h-6"/><path d="M22 8c0 3 4 3 4 6M32 8c0 3 4 3 4 6"/></svg>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-category">Drinkware</div>
+          <h3 class="product-title">Peptides &amp; Hormones Mug</h3>
+          <p class="product-desc">Ceramic 12oz mug. Matte black exterior, gold-leaf interior, embossed wordmark.</p>
+          <div class="product-foot">
+            <div class="product-price">$22 <span class="price-soon">est.</span></div>
+            <button class="product-buy" disabled data-buy>Coming Soon</button>
+          </div>
+        </div>
+        <div class="shopify-mount" data-shopify-mount="coffee-mug"></div>
+      </article>
+
+      <!-- Baseball Hat -->
+      <article class="product-card" data-product="baseball-hat">
+        <div class="product-media">
+          <div class="product-icon">
+            <svg viewBox="0 0 64 64"><path d="M6 44c0-16 12-26 26-26s26 10 26 26"/><path d="M6 44h52v6H6z"/><path d="M32 18v-6"/><circle cx="32" cy="32" r="4"/></svg>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-category">Headwear</div>
+          <h3 class="product-title">Helix Embroidered Cap</h3>
+          <p class="product-desc">Structured 6-panel cap, navy crown with gold-thread DNA helix on front.</p>
+          <div class="product-foot">
+            <div class="product-price">$28 <span class="price-soon">est.</span></div>
+            <button class="product-buy" disabled data-buy>Coming Soon</button>
+          </div>
+        </div>
+        <div class="shopify-mount" data-shopify-mount="baseball-hat"></div>
+      </article>
+
+      <!-- T-Shirt -->
+      <article class="product-card" data-product="tshirt">
+        <div class="product-media">
+          <div class="product-badge">Best Seller</div>
+          <div class="product-icon">
+            <svg viewBox="0 0 64 64"><path d="M22 6l-16 8 4 12 8-4v32a4 4 0 0 0 4 4h20a4 4 0 0 0 4-4V22l8 4 4-12-16-8-4 6a8 8 0 0 1-12 0l-4-6z"/></svg>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-category">Apparel</div>
+          <h3 class="product-title">Juvenis Helix Tee</h3>
+          <p class="product-desc">Soft cotton crewneck. Navy or charcoal with the Juvenis Medical wordmark on the chest.</p>
+          <div class="product-foot">
+            <div class="product-price">$34 <span class="price-soon">est.</span></div>
+            <button class="product-buy" disabled data-buy>Coming Soon</button>
+          </div>
+        </div>
+        <div class="shopify-mount" data-shopify-mount="tshirt"></div>
+      </article>
+
+      <!-- Hoodie -->
+      <article class="product-card" data-product="hoodie">
+        <div class="product-media">
+          <div class="product-icon">
+            <svg viewBox="0 0 64 64"><path d="M22 4l-4 8L4 18l4 14 8-3v27a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V29l8 3 4-14-14-6-4-8h-4l-4 8a4 4 0 0 1-8 0l-4-8h-2z"/><path d="M28 12s2 6 4 6 4-6 4-6"/></svg>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-category">Apparel</div>
+          <h3 class="product-title">Longevity Pullover Hoodie</h3>
+          <p class="product-desc">Heavyweight fleece, navy with gold drawstring tips. Embroidered helix on chest.</p>
+          <div class="product-foot">
+            <div class="product-price">$72 <span class="price-soon">est.</span></div>
+            <button class="product-buy" disabled data-buy>Coming Soon</button>
+          </div>
+        </div>
+        <div class="shopify-mount" data-shopify-mount="hoodie"></div>
+      </article>
+
+      <!-- Tote Bag -->
+      <article class="product-card" data-product="tote-bag">
+        <div class="product-media">
+          <div class="product-icon">
+            <svg viewBox="0 0 64 64"><path d="M10 22h44l-3 36a4 4 0 0 1-4 4H17a4 4 0 0 1-4-4l-3-36z"/><path d="M22 22v-6a10 10 0 0 1 20 0v6"/></svg>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-category">Accessories</div>
+          <h3 class="product-title">Heavyweight Canvas Tote</h3>
+          <p class="product-desc">12oz natural canvas with reinforced straps. Helix and wordmark printed in gold.</p>
+          <div class="product-foot">
+            <div class="product-price">$24 <span class="price-soon">est.</span></div>
+            <button class="product-buy" disabled data-buy>Coming Soon</button>
+          </div>
+        </div>
+        <div class="shopify-mount" data-shopify-mount="tote-bag"></div>
+      </article>
+
+      <!-- Notebook -->
+      <article class="product-card" data-product="notebook">
+        <div class="product-media">
+          <div class="product-icon">
+            <svg viewBox="0 0 64 64"><rect x="10" y="6" width="44" height="52" rx="3"/><path d="M18 16h28M18 26h28M18 36h28M18 46h20"/><path d="M10 14h-4v36h4"/></svg>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-category">Accessories</div>
+          <h3 class="product-title">Clinical Notebook</h3>
+          <p class="product-desc">Hardcover dotted notebook, navy linen with gold-foiled helix and ribbon marker.</p>
+          <div class="product-foot">
+            <div class="product-price">$26 <span class="price-soon">est.</span></div>
+            <button class="product-buy" disabled data-buy>Coming Soon</button>
+          </div>
+        </div>
+        <div class="shopify-mount" data-shopify-mount="notebook"></div>
+      </article>
+    </div>
+
+    <!-- INFO STRIP -->
+    <div class="shop-info">
+      <div class="shop-info-item">
+        <div class="shop-info-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+        </div>
+        <h4>Print on Demand</h4>
+        <p>Fulfilled via Printful. Items printed and shipped after your order.</p>
+      </div>
+      <div class="shop-info-item">
+        <div class="shop-info-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h4>Ships Worldwide</h4>
+        <p>Most apparel ships in 5–8 business days within the US.</p>
+      </div>
+      <div class="shop-info-item">
+        <div class="shop-info-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <h4>Premium Materials</h4>
+        <p>Sourced for quality and longevity — like the medicine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <img src="images/logo-stacked.png" alt="Juvenis Medical" class="footer-logo-img">
+        <div class="footer-tagline">Peptide &amp; Hormone Specialists<br>Fort Lauderdale, Florida</div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          1164 E. Oakland Park Blvd., Suite 202<br>Oakland Park, FL 33334
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          (954) 982-8378
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          paul@peptidesandhormones.com
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Mon–Fri 8am–5pm · Sat by appointment
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/mens-health.html">Men's Health &amp; ED</a></li>
+          <li><a href="services/trt.html">Testosterone / TRT</a></li>
+          <li><a href="services/weight-loss.html">Weight Loss</a></li>
+          <li><a href="services/peptides.html">Peptide Therapy</a></li>
+          <li><a href="services/bhrt.html">BHRT</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Clinic</h4>
+        <ul>
+          <li><a href="about.html">About Dr. Paul</a></li>
+          <li><a href="start.html">See If You Qualify</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Peptides</h4>
+        <ul>
+          <li><a href="peptides/bpc-157.html">BPC-157</a></li>
+          <li><a href="peptides/sermorelin.html">Sermorelin</a></li>
+          <li><a href="peptides/ipamorelin-cjc-1295.html">Ipamorelin / CJC-1295</a></li>
+          <li><a href="peptides/nad-plus.html">NAD+</a></li>
+          <li><a href="peptides/semaglutide.html">Semaglutide</a></li>
+          <li><a href="peptides/tirzepatide.html">Tirzepatide</a></li>
+          <li><a href="peptides/gac.html">GAC Injections</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">This website is for informational purposes only and does not constitute medical advice. Telehealth services for controlled substances (including TRT) are available to Florida residents only. Non-controlled peptide therapy is available nationwide via telehealth. In-person visits at our Oakland Park, FL clinic are open to all patients. All medications are sourced from licensed compounding pharmacies only.</p>
+      <p class="footer-copy">© 2026 Juvenis Medical LLC</p>
+      <p class="footer-built">Built by <a href="https://peterlukedigital.com" target="_blank" rel="noopener">Peter Luke Digital</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- SHOPIFY SCAFFOLD -->
+<script src="shop.js"></script>
+
+</body>
+</html>
