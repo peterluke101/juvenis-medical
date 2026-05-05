@@ -32,16 +32,17 @@
 .shop-section{padding:2rem 1.5rem 5rem}
 .shop-inner{max-width:var(--max-w);margin:0 auto}
 
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-@media(max-width:900px){.product-grid{grid-template-columns:repeat(2,1fr);gap:1rem}}
-@media(max-width:520px){.product-grid{grid-template-columns:1fr}}
+.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;align-items:stretch;grid-auto-rows:minmax(0,auto)}
+@media(max-width:900px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}}
+@media(max-width:520px){.product-grid{grid-template-columns:minmax(0,1fr)}}
 
-.product-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;display:flex;flex-direction:column;position:relative}
+.product-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;display:flex;flex-direction:column;position:relative;min-width:0;min-height:0}
 .product-card:hover{transform:translateY(-4px);border-color:var(--gold-border);box-shadow:var(--shadow-gold)}
 .product-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
 .product-card:hover::after{transform:scaleX(1)}
 
-.product-media{aspect-ratio:1/1;background:var(--surface2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.product-media{height:240px;background:var(--surface2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0}
+@media(max-width:520px){.product-media{height:220px}}
 .product-media::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(201,150,58,.05) 0%,transparent 70%);pointer-events:none}
 .product-icon{width:84px;height:84px;color:var(--gold);opacity:.55;transition:opacity .25s,transform .25s;position:relative;z-index:1}
 .product-card:hover .product-icon{opacity:.85;transform:scale(1.06)}
@@ -84,8 +85,9 @@
       <li><a href="services/">Services</a></li>
       <li><a href="blog/">Learn</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="index.html#process">How It Works</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
     </ul>
     <a href="start.html" class="nav-cta">See If You Qualify</a>
     <button class="nav-hamburger" onclick="document.querySelector('.nav-mobile').classList.toggle('open')">
@@ -97,8 +99,9 @@
   <a href="services/">Services</a>
   <a href="blog/">Learn</a>
   <a href="about.html">About</a>
-  <a href="shop.html">Shop</a>
+  <a href="index.html#process">How It Works</a>
   <a href="contact.html">Contact</a>
+  <a href="shop.html">Shop</a>
   <a href="start.html" class="btn btn-gold">See If You Qualify →</a>
 </div>
 
