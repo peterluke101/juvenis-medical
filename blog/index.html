@@ -21,7 +21,7 @@
 .blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:border-color .2s,transform .2s;display:flex;flex-direction:column}
 .blog-card:hover{border-color:var(--gold-border);transform:translateY(-2px)}
 .blog-card-body{padding:1.75rem;flex:1;display:flex;flex-direction:column}
-.blog-card-tag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:.65rem;display:block}
+.blog-card-tag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal-light);margin-bottom:.65rem;display:block}
 .blog-card-title{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;color:var(--text);margin-bottom:.65rem;line-height:1.35;font-weight:600}
 .blog-card-title a{color:inherit;text-decoration:none}
 .blog-card-title a:hover{color:var(--gold)}
@@ -34,6 +34,23 @@
 .topic-filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
 .topic-btn{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:.4rem 1rem;font-size:.76rem;color:var(--text2);cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
 .topic-btn:hover,.topic-btn.active{background:var(--gold-dim);border-color:var(--gold-border);color:var(--text)}
+.video-feature{background:linear-gradient(135deg,var(--surface) 0%,rgba(201,150,58,.04) 100%);border:1px solid var(--gold-border);border-left:3px solid var(--gold);border-radius:var(--radius-lg);padding:2.25rem 2.5rem;margin-top:2.5rem;display:grid;grid-template-columns:1fr 320px;gap:2.5rem;align-items:center}
+@media (max-width:880px){.video-feature{grid-template-columns:1fr;padding:1.75rem;gap:1.75rem}}
+.video-feature-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);margin-bottom:.85rem}
+.video-feature-eyebrow::before{content:'●';font-size:.5rem;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+.video-feature-title{font-family:'Space Grotesk',sans-serif;font-size:1.65rem;line-height:1.25;color:var(--text);margin:0 0 .85rem;font-weight:600}
+.video-feature-desc{font-size:.92rem;color:var(--text2);line-height:1.65;margin:0 0 1.5rem;max-width:560px}
+.video-feature-cta{font-size:.92rem;padding:.85rem 1.85rem}
+.video-feature-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.video-feature-thumb{position:relative;aspect-ratio:9/16;border-radius:var(--radius);overflow:hidden;background:#000;border:1px solid var(--border);text-decoration:none;display:block;transition:transform .25s,border-color .25s}
+.video-feature-thumb:hover{transform:translateY(-3px);border-color:var(--gold)}
+.video-feature-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.video-feature-thumb .play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.55) 100%);transition:background .25s}
+.video-feature-thumb:hover .play-overlay{background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.6) 100%)}
+.play-icon{width:46px;height:46px;border-radius:50%;background:rgba(201,150,58,.95);display:flex;align-items:center;justify-content:center;color:#0D0F14;font-size:1rem;padding-left:3px;box-shadow:0 4px 16px rgba(0,0,0,.35);transition:transform .25s}
+.video-feature-thumb:hover .play-icon{transform:scale(1.08)}
+.video-feature-thumb .thumb-label{position:absolute;left:.65rem;right:.65rem;bottom:.65rem;font-size:.68rem;font-weight:600;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6);letter-spacing:.04em}
 .coming-soon{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;opacity:.6}
 .coming-soon .blog-card-tag{color:var(--text3)}
 .coming-soon .blog-card-title{color:var(--text2)}
@@ -78,21 +95,29 @@
       <button class="topic-btn">Telehealth</button>
     </div>
 
-    <div class="blog-grid">
-
-      <!-- Video Library -->
-      <div class="blog-card">
-        <div class="blog-card-body">
-          <span class="blog-card-tag">Video Library · For Patients</span>
-          <div class="blog-card-title"><a href="videos.html">Injection Demonstrations: Watch Dr. Paul Walk You Through Your First Dose</a></div>
-          <p class="blog-card-excerpt">Step-by-step video demonstrations from Dr. Paul on how to safely self-administer your peptide and TRT injections at home. Recommended viewing before your first dose.</p>
-          <div class="blog-card-meta">
-            <span class="blog-card-date">2 videos</span>
-            <span class="blog-card-read">Watch &amp; Learn</span>
-            <a href="videos.html" class="blog-card-cta">Watch →</a>
-          </div>
+    <!-- Featured: Patient Video Library -->
+    <a href="videos.html" style="text-decoration:none;color:inherit"><div class="video-feature">
+      <div class="video-feature-content">
+        <span class="video-feature-eyebrow">Patient Video Library · For Patients</span>
+        <h2 class="video-feature-title">Watch Dr. Paul Walk You Through Your First Injection</h2>
+        <p class="video-feature-desc">Step-by-step demonstrations recorded by Dr. Paul Goodkin — peptide injection technique and weekly TRT self-administration. Recommended viewing before your first dose.</p>
+        <span class="btn btn-gold video-feature-cta">Watch Both Videos →</span>
+      </div>
+      <div class="video-feature-thumbs">
+        <div class="video-feature-thumb">
+          <img src="https://i.ytimg.com/vi/5GUQU2nZc_w/hqdefault.jpg" alt="Peptide injection demonstration with Dr. Paul Goodkin" loading="lazy">
+          <div class="play-overlay"><div class="play-icon">▶</div></div>
+          <span class="thumb-label">Peptide Injection</span>
+        </div>
+        <div class="video-feature-thumb">
+          <img src="https://i.ytimg.com/vi/BF7JhQ1ZlA4/hqdefault.jpg" alt="Testosterone (TRT) injection demonstration with Dr. Paul Goodkin" loading="lazy">
+          <div class="play-overlay"><div class="play-icon">▶</div></div>
+          <span class="thumb-label">TRT Injection</span>
         </div>
       </div>
+    </div></a>
+
+    <div class="blog-grid">
 
       <!-- Published Post 1 -->
       <div class="blog-card">
