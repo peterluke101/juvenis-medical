@@ -44,8 +44,7 @@
 
 /* ── VIDEO LIBRARY CARD — distinct from blog cards ── */
 .video-feature{position:relative;border:1px solid var(--gold-border);background:linear-gradient(180deg,rgba(201,150,58,.04),var(--surface) 45%);container-type:inline-size;box-shadow:0 12px 32px -16px rgba(0,0,0,.5)}
-.video-feature::before{content:'';display:block;aspect-ratio:16/9;background:radial-gradient(circle at 50% 50%,rgba(201,150,58,.22) 0%,transparent 55%),linear-gradient(135deg,#1E6878 0%,#0E3D40 55%,#0a1622 100%);border-bottom:1px solid var(--gold-border)}
-.video-feature::after{content:'\25B6';position:absolute;top:calc(100cqw * 9 / 16 / 2);left:50%;transform:translate(-50%,-50%);width:68px;height:68px;display:flex;align-items:center;justify-content:center;background:var(--gold);color:#081020;border-radius:50%;font-size:1.5rem;padding-left:5px;box-shadow:0 0 0 10px rgba(201,150,58,.16),0 0 0 22px rgba(201,150,58,.08),0 14px 36px rgba(0,0,0,.45);pointer-events:none}
+.video-feature::before{content:'';display:block;aspect-ratio:16/9;background:url('../images/video-library-poster.jpg') center/cover no-repeat,#081020;border-bottom:1px solid var(--gold-border)}
 .video-feature .video-badge{position:absolute;top:1rem;right:1rem;background:var(--gold);color:#081020;font-size:.62rem;font-weight:800;letter-spacing:.14em;padding:.35rem .65rem;border-radius:4px;z-index:2;font-family:'Space Grotesk',sans-serif}
 .video-feature .blog-card-tag{color:var(--gold-light)}
 .video-feature .blog-card-cta{background:var(--gold);color:#081020;padding:.55rem 1.1rem;border-radius:6px;font-weight:700;font-size:.76rem;letter-spacing:.04em}
