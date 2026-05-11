@@ -106,11 +106,23 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- FAQ -->
+  <url>
+    <loc>https://peptidesandhormones.com/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Blog / Educational Resources -->
   <url>
     <loc>https://peptidesandhormones.com/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://peptidesandhormones.com/blog/videos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://peptidesandhormones.com/blog/signs-of-low-testosterone</loc>
@@ -156,6 +168,23 @@
     <loc>https://peptidesandhormones.com/blog/how-to-start-peptide-therapy-first-consultation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://peptidesandhormones.com/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://peptidesandhormones.com/terms-of-use</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://peptidesandhormones.com/telehealth-disclosure</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>
