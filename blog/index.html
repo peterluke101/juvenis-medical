@@ -9,23 +9,10 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://peptidesandhormones.com/blog/">
 <meta property="og:site_name" content="Juvenis Medical">
-<meta property="og:image" content="https://peptidesandhormones.com/images/hero-helix-desktop.png">
-<meta property="og:image:alt" content="Juvenis Medical — peptide and hormone therapy in Fort Lauderdale, Florida">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Juvenis Medical — Educational Resources & Articles">
 <meta name="twitter:description" content="Clear, honest education on peptides, hormones, and metabolic health. Fort Lauderdale's resource for patients who want to understand their options.">
-<meta name="twitter:image" content="https://peptidesandhormones.com/images/hero-helix-desktop.png">
 <link rel="canonical" href="https://peptidesandhormones.com/blog/">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://peptidesandhormones.com"},
-    {"@type":"ListItem","position":2,"name":"Blog","item":"https://peptidesandhormones.com/blog/"}
-  ]
-}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../jv-styles.css">
@@ -54,6 +41,16 @@
 .footer-built { font-size: 0.72rem; color: rgba(255,255,255,0.28); margin-top: 0.25rem; }
 .footer-built a { color: rgba(255,255,255,0.28); text-decoration: none; }
 .footer-built a:hover { color: rgba(255,255,255,0.5); }
+
+/* ── VIDEO LIBRARY CARD — distinct from blog cards ── */
+.video-feature{position:relative;border:1px solid var(--gold-border);background:linear-gradient(180deg,rgba(201,150,58,.04),var(--surface) 45%);container-type:inline-size;box-shadow:0 12px 32px -16px rgba(0,0,0,.5)}
+.video-feature::before{content:'';display:block;aspect-ratio:16/9;background:radial-gradient(circle at 50% 50%,rgba(201,150,58,.22) 0%,transparent 55%),linear-gradient(135deg,#1E6878 0%,#0E3D40 55%,#0a1622 100%);border-bottom:1px solid var(--gold-border)}
+.video-feature::after{content:'\25B6';position:absolute;top:calc(100cqw * 9 / 16 / 2);left:50%;transform:translate(-50%,-50%);width:68px;height:68px;display:flex;align-items:center;justify-content:center;background:var(--gold);color:#081020;border-radius:50%;font-size:1.5rem;padding-left:5px;box-shadow:0 0 0 10px rgba(201,150,58,.16),0 0 0 22px rgba(201,150,58,.08),0 14px 36px rgba(0,0,0,.45);pointer-events:none}
+.video-feature .video-badge{position:absolute;top:1rem;right:1rem;background:var(--gold);color:#081020;font-size:.62rem;font-weight:800;letter-spacing:.14em;padding:.35rem .65rem;border-radius:4px;z-index:2;font-family:'Space Grotesk',sans-serif}
+.video-feature .blog-card-tag{color:var(--gold-light)}
+.video-feature .blog-card-cta{background:var(--gold);color:#081020;padding:.55rem 1.1rem;border-radius:6px;font-weight:700;font-size:.76rem;letter-spacing:.04em}
+.video-feature .blog-card-cta:hover{background:var(--gold-light);color:#081020}
+.video-feature:hover{border-color:var(--gold);transform:translateY(-2px)}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVTYLQHYQN"></script>
@@ -94,7 +91,8 @@
     <div class="blog-grid">
 
       <!-- Video Library -->
-      <div class="blog-card">
+      <div class="blog-card video-feature">
+        <span class="video-badge">&#9654; Video</span>
         <div class="blog-card-body">
           <span class="blog-card-tag">Video Library · For Patients</span>
           <div class="blog-card-title"><a href="videos.html">Injection Demonstrations: Watch Dr. Paul Walk You Through Your First Dose</a></div>
