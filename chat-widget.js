@@ -1,7 +1,7 @@
 /**
  * Juvenis Medical — Front Desk Assistant Widget
  * Scripted chatbot — no AI, no external APIs, no free-text input.
- * All responses are pre-approved. Medical questions route to consultation booking.
+ * All responses are pre-approved. Medical questions route to a phone call.
  *
  * Usage (root pages):      <script src="chat-widget.js"></script>
  * Usage (subdir pages):    <script src="../chat-widget.js" data-base="../"></script>
@@ -141,8 +141,8 @@
         ]
       },
       qualify: {
-        msg: "The quickest way to find out is our 2-minute qualifier tool. It checks your location and what you're looking for, then shows you exactly which services apply to you.",
-        action: { label: "Take the Qualifier →", url: b + "start.html" },
+        msg: "The quickest way to find out is a short phone call with our office. We'll check your location and what you're looking for, then tell you exactly which services apply to you.",
+        action: { label: "Call (954) 982-8378", url: "tel:+19549828378" },
         replies: [
           { label: "Tell me more first", next: "about"  },
           { label: "Start over",         next: "start"  },
@@ -157,7 +157,7 @@
         ]
       },
       process: {
-        msg: "Here's how it works:\n\n<b>1.</b> Free 15-min consultation with Dr. Paul\n<b>2.</b> Comprehensive lab work (70+ factors)\n<b>3.</b> Personalized protocol built around your results\n<b>4.</b> Medications from licensed pharmacies, shipped to you\n<b>5.</b> Ongoing monitoring and adjustments\n\nAfter booking you'll receive intake forms to complete before your appointment.",
+        msg: "Here's how it works:\n\n<b>1.</b> Free 15-min consultation with Dr. Paul\n<b>2.</b> Comprehensive lab work (70+ factors)\n<b>3.</b> Personalized protocol built around your results\n<b>4.</b> Medications from licensed pharmacies, shipped to you\n<b>5.</b> Ongoing monitoring and adjustments\n\nAfter your first call, we'll guide you through any forms to complete before your appointment.",
         replies: [
           { label: "What happens after I book?", next: "afterbook" },
           { label: "How do I get started?",      next: "book"     },
@@ -165,7 +165,7 @@
         ]
       },
       afterbook: {
-        msg: "After you book a consultation:\n\n• You'll receive a confirmation email with a short intake form\n• Complete it at your own pace — takes about 5 minutes\n• Dr. Paul reviews your info before your call\n• The clinic follows up to coordinate labs and next steps",
+        msg: "After you book a consultation by phone:\n\n• You'll receive a confirmation with any short intake form needed\n• Complete it at your own pace — takes about 5 minutes\n• Dr. Paul reviews your info before your call\n• The clinic follows up to coordinate labs and next steps",
         replies: [
           { label: "Book now",   next: "book"  },
           { label: "Start over", next: "start" },
@@ -173,7 +173,7 @@
       },
       services: {
         msg: "Here's a quick breakdown by availability:\n\n🌍 <b>All 50 states:</b> Peptide therapy, Medical weight loss\n🌴 <b>Florida residents:</b> TRT, BHRT, Men's hormone panel\n🏥 <b>In-person (anyone):</b> Full range of services\n\nNot sure what applies to you?",
-        action: { label: "Check My Options →", url: b + "start.html" },
+        action: { label: "Call (954) 982-8378", url: "tel:+19549828378" },
         replies: [
           { label: "Peptide therapy", next: "peptides"   },
           { label: "Testosterone / TRT", next: "trt"    },
@@ -184,7 +184,7 @@
       },
       peptides: {
         msg: "Peptide therapy at Juvenis Medical includes compounds such as BPC-157, Sermorelin, Ipamorelin/CJC-1295, NAD+, and others. These are used to support recovery, energy, body composition, and cellular health.\n\nAvailable via telehealth to all 50 states.\n\nFor questions about whether peptide therapy is appropriate for your situation, the free consultation is the right place to ask.",
-        action: { label: "Book a Consultation →", url: b + "contact.html" },
+        action: { label: "Call to Book →", url: "tel:+19549828378" },
         replies: [
           { label: "Back to services", next: "services" },
           { label: "Start over",       next: "start"    },
@@ -192,7 +192,7 @@
       },
       trt: {
         msg: "Testosterone Replacement Therapy at Juvenis Medical is lab-guided — bloodwork is reviewed before any protocol is started. TRT telehealth is available to Florida residents. Out-of-state patients are welcome to visit our Fort Lauderdale clinic in person.\n\nWhether TRT is appropriate for you is a clinical determination made after your evaluation — not something I can assess here.",
-        action: { label: "Book a Consultation →", url: b + "contact.html" },
+        action: { label: "Call to Book →", url: "tel:+19549828378" },
         replies: [
           { label: "Check my options", next: "qualify"  },
           { label: "Start over",       next: "start"    },
@@ -200,7 +200,7 @@
       },
       wtloss: {
         msg: "Juvenis Medical offers medically supervised weight loss including GLP-1 therapy. Programs are personalized based on lab work and individual health goals. Available via telehealth to all 50 states. All medications are sourced from licensed compounding pharmacies.",
-        action: { label: "Book a Consultation →", url: b + "contact.html" },
+        action: { label: "Call to Book →", url: "tel:+19549828378" },
         replies: [
           { label: "Back to services", next: "services" },
           { label: "Start over",       next: "start"    },
@@ -208,7 +208,7 @@
       },
       bhrt: {
         msg: "Bioidentical Hormone Replacement Therapy (BHRT) is available for women and is lab-guided. Many patients seek support for perimenopause, menopause, and hormone balance. BHRT telehealth is available to Florida residents. In-person visits at our Fort Lauderdale clinic are open to all patients.",
-        action: { label: "Book a Consultation →", url: b + "contact.html" },
+        action: { label: "Call to Book →", url: "tel:+19549828378" },
         replies: [
           { label: "Back to services", next: "services" },
           { label: "Start over",       next: "start"    },
@@ -222,8 +222,8 @@
         ]
       },
       book: {
-        msg: "You can book a free 15-minute consultation with Dr. Paul directly. No commitment and no cost.",
-        action: { label: "Book Now →", url: b + "contact.html" },
+        msg: "Booking is by phone so you speak directly with Dr. Paul's office. Call us and we'll set up your free 15-minute consultation. No commitment and no cost.",
+        action: { label: "Call (954) 982-8378", url: "tel:+19549828378" },
         replies: [
           { label: "Start over", next: "start" },
         ]
@@ -257,8 +257,8 @@
     msgs.appendChild(bubble);
     const a = document.createElement('a');
     a.className = 'jv-action';
-    a.href = base + 'contact.html';
-    a.textContent = 'Book Free Consultation →';
+    a.href = 'tel:+19549828378';
+    a.textContent = 'Call (954) 982-8378';
     msgs.appendChild(a);
     const qrs = document.createElement('div');
     qrs.className = 'jv-qrs';
