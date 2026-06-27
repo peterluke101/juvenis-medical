@@ -104,6 +104,13 @@
 .telehealth-note ul{list-style:none;display:flex;flex-direction:column;gap:.35rem}
 .telehealth-note li{font-size:.76rem;color:var(--text2);display:flex;align-items:flex-start;gap:.4rem;line-height:1.5}
 .telehealth-note li::before{content:'•';color:var(--gold);flex-shrink:0}
+@media(max-width:768px){
+  .contact-section{padding:3rem 1rem}
+  .contact-inner{gap:1.5rem}
+  .contact-inner>*{min-width:0}
+  .contact-info-card,.consult-card,.form-card{padding:1.25rem}
+  .contact-row-value,.telehealth-note a{word-break:break-word}
+}
 </style>
 </head>
 <body>

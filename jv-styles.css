@@ -44,7 +44,7 @@ h3{font-size:clamp(1.1rem,2vw,1.4rem);font-weight:600}
 p{color:var(--text2);line-height:1.75}
 
 /* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Inter',sans-serif;font-weight:700;font-size:.88rem;padding:.85rem 1.85rem;border-radius:10px;cursor:pointer;border:none;transition:all .2s;letter-spacing:.01em;text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:'Inter',sans-serif;font-weight:700;font-size:.88rem;padding:.85rem 1.85rem;border-radius:10px;cursor:pointer;border:none;transition:all .2s;letter-spacing:.01em;text-decoration:none;white-space:nowrap;max-width:100%}
 .btn-gold{background:var(--gold);color:#0D0F14}
 .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:var(--shadow-gold)}
 .btn-ghost{background:transparent;color:var(--text2);border:1px solid var(--border2)}
@@ -95,8 +95,15 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
 .nav-mobile.open{display:flex}
 .nav-mobile a{color:var(--text);font-size:1.2rem;font-weight:600;padding:1rem 0;border-bottom:1px solid var(--border);display:block}
 .nav-mobile a:hover{color:var(--gold)}
-.nav-mobile .btn-gold{margin-top:1.5rem;justify-content:center;font-size:1rem;padding:1rem;color:#0D0F14 !important}
+.nav-mobile .btn-gold{margin-top:1.5rem;justify-content:center;padding:1rem;color:#0D0F14 !important}
 @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-cta{display:none}}
+/* Keep appointment CTAs (incl. the phone number) on ONE line on mobile.
+   Font scales with viewport so the label always fits its container — no wrap, no overflow. */
+@media(max-width:768px){
+  .btn{font-size:clamp(.62rem,2.7vw,.86rem) !important;padding:.8rem .8rem !important}
+  .hero-actions .btn{font-size:.86rem !important}
+  .cta-band-box,.cta-band-inner{padding:2.5rem 1rem}
+}
 
 /* ============================================================
    RELATED / ALSO GRID
