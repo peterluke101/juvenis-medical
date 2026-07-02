@@ -98,11 +98,17 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
 .nav-mobile .btn-gold{margin-top:1.5rem;justify-content:center;padding:1rem;color:#0D0F14 !important}
 @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}.nav-cta{display:none}}
 /* Keep appointment CTAs (incl. the phone number) on ONE line on mobile.
-   Font scales with viewport so the label always fits its container — no wrap, no overflow. */
+   On small screens the label swaps to a short form ("Call · number") so the
+   font never has to shrink below a legible size — no wrap, no overflow, no clip. */
+.cta-short{display:none}
 @media(max-width:768px){
-  .btn{font-size:clamp(.62rem,2.7vw,.86rem) !important;padding:.8rem .8rem !important}
+  .btn{font-size:clamp(.78rem,3vw,.86rem) !important;padding:.8rem .8rem !important}
   .hero-actions .btn{font-size:.86rem !important}
   .cta-band-box,.cta-band-inner{padding:2.5rem 1rem}
+}
+@media(max-width:480px){
+  .cta-long{display:none}
+  .cta-short{display:inline}
 }
 
 /* ============================================================
