@@ -186,7 +186,7 @@
       <div class="result-box">
         <div class="result-icon-wrap green">✓</div>
         <h2>You're a Great Fit</h2>
-        <p>Based on your answers, all of our services are available to you — including telehealth and in-person. Here's the next step.</p>
+        <p>As a Florida resident, every service we offer is available to you — hormone therapy, peptides, and weight loss, by telehealth or in person. Here's the next step.</p>
         <div class="result-detail">
           <h4>Recommended Starting Point</h4>
           <p>A free 15-minute consultation with Dr. Paul to discuss your goals, explain the blood panel process, and answer your questions. No commitment required.</p>
@@ -211,8 +211,8 @@
     <div class="funnel-step" id="result-limited">
       <div class="result-box">
         <div class="result-icon-wrap amber">⚡</div>
-        <h2>Some of This Is Open to You Remotely</h2>
-        <p>Peptide therapy and medical weight loss are available via telehealth nationwide. Hormone therapy — testosterone, women's hormones, and thyroid — requires Florida residency or an in-person visit at our Fort Lauderdale clinic.</p>
+        <h2>Here's What's Available to You</h2>
+        <p>Peptide therapy, growth hormone secretagogues, and medical weight loss are available to you by telehealth from any state. Hormone therapy — testosterone, women's hormones, and thyroid — requires Florida residency, or a visit to our Fort Lauderdale clinic, which is open to patients from every state.</p>
         <div class="result-detail">
           <h4>Your Options</h4>
           <p><strong style="color:var(--text)">Available to you remotely:</strong> Peptide therapy, medical weight loss, growth hormone secretagogues<br><br><strong style="color:var(--text)">Florida residents or in-person only:</strong> Testosterone (TRT), women's hormone therapy (BHRT), thyroid</p>
@@ -314,13 +314,10 @@ function showResult() {
   } else if (location === 'florida') {
     resultId = 'result-full';
   } else {
-    // Out of state telehealth — all hormone care (TRT, women's hormones, thyroid)
-    // is Florida-only. Only peptides and weight loss are nationwide.
-    if (service === 'peptides' || service === 'weightloss') {
-      resultId = 'result-full';
-    } else {
-      resultId = 'result-limited'; // hormone, bhrt, unsure
-    }
+    // Out of state telehealth. Hormone care (TRT, women's hormones, thyroid) is
+    // Florida-only; peptides and weight loss are nationwide. Nobody out of state
+    // sees "all services available" — that is only true for Florida residents.
+    resultId = 'result-limited';
   }
 
   document.getElementById(resultId).classList.add('active');
