@@ -276,3 +276,14 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:0}
 .faq-list .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem}
 .faq-list .faq-item h3{font-size:.9rem;color:var(--text);margin-bottom:.5rem;font-family:'Space Grotesk',sans-serif}
 .faq-list .faq-item p{font-size:.82rem;color:var(--text2);line-height:1.65;margin:0}
+
+
+/* ============================================================
+   TRUST / REVIEWS STRIP (Phase 3)
+   Same pattern as the homepage trust strip. Live facts only.
+   ============================================================ */
+.trust-strip{background:var(--surface2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.75rem 1.5rem}
+.trust-strip-inner{max-width:var(--max-w);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.5rem}
+.trust-strip-item{display:flex;align-items:center;gap:.6rem;font-size:.78rem;color:var(--text2);font-weight:500}
+.trust-strip-icon{font-size:1.1rem}
+.reviews-google-line{text-align:center;margin-top:1.75rem;font-size:.85rem;color:var(--text2)}

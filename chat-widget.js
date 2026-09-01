@@ -131,7 +131,7 @@
   function flows(b) {
     return {
       start: {
-        msg: "Hi! 👋 I can answer common questions about Juvenis Medical and help you find the right next step.",
+        msg: "Hi! 👋 I can answer common questions about hormone therapy at Juvenis Medical and help you find the right next step.",
         replies: [
           { label: "Am I a good fit?",       next: "qualify"   },
           { label: "How does it work?",       next: "process"   },
@@ -149,7 +149,7 @@
         ]
       },
       about: {
-        msg: "Juvenis Medical is a direct-care integrative health clinic in Fort Lauderdale, FL. Dr. Paul Goodkin has 20+ years of clinical experience and specializes in peptide therapy, hormone optimization, medical weight loss, and men's & women's health. All care plans are built around individual lab results.",
+        msg: "Juvenis Medical is a direct-care integrative health clinic in Fort Lauderdale, FL. Dr. Paul Goodkin has 20+ years of clinical experience and specializes in hormone optimization, peptide therapy, medical weight loss, and men's & women's health. All care plans are built around individual lab results.",
         replies: [
           { label: "Am I a good fit?",     next: "qualify"  },
           { label: "Services & telehealth", next: "services" },
@@ -172,13 +172,14 @@
         ]
       },
       services: {
-        msg: "Here's a quick breakdown by availability:\n\n🌍 <b>All 50 states:</b> Peptide therapy, Medical weight loss\n🌴 <b>Florida residents:</b> TRT, BHRT, Men's hormone panel\n🏥 <b>In-person (anyone):</b> Full range of services\n\nNot sure what applies to you?",
+        msg: "Here's a quick breakdown by availability:\n\n🌍 <b>All 50 states:</b> Peptide therapy, Medical weight loss\n🌴 <b>Florida residents:</b> TRT, women's hormones (BHRT), thyroid, men's hormone panel\n🏥 <b>In-person (anyone):</b> Full range of services\n\nNot sure what applies to you?",
         action: { label: "Call (954) 982-8378", url: "tel:+19549828378" },
         replies: [
-          { label: "Peptide therapy", next: "peptides"   },
           { label: "Testosterone / TRT", next: "trt"    },
-          { label: "Medical weight loss", next: "wtloss" },
           { label: "Women's BHRT",    next: "bhrt"       },
+          { label: "Thyroid",         next: "thyroid"    },
+          { label: "Peptide therapy", next: "peptides"   },
+          { label: "Medical weight loss", next: "wtloss" },
           { label: "Start over",      next: "start"      },
         ]
       },
@@ -191,7 +192,7 @@
         ]
       },
       trt: {
-        msg: "Testosterone Replacement Therapy at Juvenis Medical is lab-guided — bloodwork is reviewed before any protocol is started. TRT telehealth is available to Florida residents. Out-of-state patients are welcome to visit our Fort Lauderdale clinic in person.\n\nWhether TRT is appropriate for you is a clinical determination made after your evaluation — not something I can assess here.",
+        msg: "Testosterone Replacement Therapy at Juvenis Medical is lab-guided — bloodwork is reviewed before any protocol is started. TRT telehealth is available to Florida residents. Out-of-state patients are welcome to visit our Fort Lauderdale clinic in person.\n\nHCG or enclomiphene may be part of the protocol depending on labs and goals. Whether TRT is appropriate for you is a clinical determination made after your evaluation — not something I can assess here.",
         action: { label: "Call to Book →", url: "tel:+19549828378" },
         replies: [
           { label: "Check my options", next: "qualify"  },
@@ -214,8 +215,16 @@
           { label: "Start over",       next: "start"    },
         ]
       },
+      thyroid: {
+        msg: "Thyroid questions are common — and this chat cannot diagnose. A typical Juvenis panel looks at TSH, free T3, free T4, and reverse T3, not TSH alone. Treatment may be T4, T3, or a combination, decided from labs. Thyroid telehealth is Florida-only.\n\nThe free 15-minute consultation is the right next step.",
+        action: { label: "Call (954) 982-8378", url: "tel:+19549828378" },
+        replies: [
+          { label: "Back to services", next: "services" },
+          { label: "Start over",       next: "start"    },
+        ]
+      },
       costs: {
-        msg: "Juvenis Medical is a <b>cash-pay practice</b> — no insurance accepted. This keeps care direct and transparent with no authorization delays or surprise bills.\n\nCosts vary by service and protocol. Dr. Paul provides clear pricing during the free consultation before any commitment. HSA/FSA cards are accepted.",
+        msg: "Juvenis Medical is a <b>cash-pay practice</b> — no insurance accepted. This keeps care direct and transparent with no authorization delays or surprise bills.\n\nThe comprehensive blood panel is $100–$345 (labs only). Other costs vary by service and protocol. Dr. Paul provides clear pricing during the free consultation before any commitment. HSA/FSA cards are accepted.",
         replies: [
           { label: "Book a free consultation", next: "book"  },
           { label: "Start over",               next: "start" },
@@ -237,10 +246,12 @@
     if (/qualify|fit\b|eligible|candidate|right for me/.test(t)) return 'qualify';
     if (/how.*(work|process|step)|what.*process/.test(t)) return 'process';
     if (/after.*(book|submit|form)|what happen/.test(t)) return 'afterbook';
-    if (/peptide|bpc|sermorelin|ipamorelin|cjc|nad\+?|growth hormone/.test(t)) return 'peptides';
+    if (/thyroid/.test(t)) return 'thyroid';
     if (/testosterone|trt|low t\b|low testosterone/.test(t)) return 'trt';
-    if (/weight.?loss|lose weight|glp|semaglutide|tirzepatide|ozempic|wegovy/.test(t)) return 'wtloss';
     if (/bhrt|menopause|perimenopause|estrogen|progesterone|women.*hormone|female hormone/.test(t)) return 'bhrt';
+    if (/peptide|bpc|sermorelin|ipamorelin|cjc|nad\+?|growth hormone/.test(t)) return 'peptides';
+    if (/hormone/.test(t)) return 'services';
+    if (/weight.?loss|lose weight|glp|semaglutide|tirzepatide|ozempic|wegovy/.test(t)) return 'wtloss';
     if (/cost|price|pricing|how much|expensive|afford|pay\b|insurance|hsa|fsa|cash/.test(t)) return 'costs';
     if (/book|schedul|appoint|consult|get started|sign up|ready\b/.test(t)) return 'book';
     if (/telehealth|remote|online.*visit|my state|nationwide|florida|which state/.test(t)) return 'services';
