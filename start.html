@@ -116,6 +116,10 @@
           <div class="choice-icon">🌿</div>
           <div class="choice-text"><h4>Women's Hormones (BHRT)</h4><p>Perimenopause, menopause, thyroid, estrogen/progesterone balance</p></div>
         </button>
+        <button class="choice-btn" onclick="selectChoice(this, 'service', 'thyroid')" type="button">
+          <div class="choice-icon">🦋</div>
+          <div class="choice-text"><h4>Thyroid</h4><p>Energy, metabolism, and a fuller panel — TSH, free T3, free T4, reverse T3</p></div>
+        </button>
         <button class="choice-btn" onclick="selectChoice(this, 'service', 'unsure')" type="button">
           <div class="choice-icon">🧬</div>
           <div class="choice-text"><h4>Not Sure — I Need an Evaluation</h4><p>I want a comprehensive assessment to understand what's driving my symptoms</p></div>
@@ -259,6 +263,76 @@
       </div>
     </div>
 
+
+    <!-- Result: Thyroid + will visit -->
+    <div class="funnel-step" id="result-thyroid-visit">
+      <div class="result-box">
+        <div class="result-icon-wrap gold">★</div>
+        <h2>In-Person Thyroid Evaluation</h2>
+        <p>You're planning to visit the Fort Lauderdale clinic. This questionnaire is for routing only — it is not a diagnosis. The next step is a free 15-minute consultation with Dr. Paul to discuss a fuller thyroid panel (TSH, free T3, free T4, reverse T3) and what applies to you.</p>
+        <div class="result-detail">
+          <h4>Fort Lauderdale Clinic</h4>
+          <p>1164 E. Oakland Park Blvd., Suite #202, Oakland Park, FL 33334<br>Mon–Fri 8am–5pm · Sat by appointment · <a href="tel:+19549828378" style="color:inherit">(954) 982-8378</a></p>
+        </div>
+        <div class="result-next">
+          <h4>What happens next</h4>
+          <div class="next-step-list">
+            <div class="next-step"><span class="next-step-num">1</span><div><strong>Confirmation email</strong> — You'll receive a short intake form within 24 hours.</div></div>
+            <div class="next-step"><span class="next-step-num">2</span><div><strong>Complete your forms</strong> — Takes about 5 minutes at your own pace.</div></div>
+            <div class="next-step"><span class="next-step-num">3</span><div><strong>Dr. Paul reviews your info</strong> — He comes prepared so your consult time counts.</div></div>
+            <div class="next-step"><span class="next-step-num">4</span><div><strong>Clinic follows up</strong> — Next steps, labs, and your protocol coordinated for you.</div></div>
+          </div>
+        </div>
+        <div class="result-actions">
+          <a href="tel:+19549828378" class="btn btn-gold" style="width:100%;text-align:center;padding:1rem"><span class="cta-long">Call for an Appointment</span><span class="cta-short">Call</span> &middot; (954) 982-8378</a>
+          <a href="hormones/thyroid.html" style="font-size:.82rem;color:var(--text2);margin-top:.25rem">Read about thyroid care</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result: Thyroid + Florida -->
+    <div class="funnel-step" id="result-thyroid-florida">
+      <div class="result-box">
+        <div class="result-icon-wrap green">✓</div>
+        <h2>Next Step: Talk Thyroid with Dr. Paul</h2>
+        <p>You're a Florida resident. Thyroid care by telehealth is available in Florida. This questionnaire is for routing only — it is not a diagnosis. A free 15-minute consultation is the place to discuss a fuller thyroid panel (TSH, free T3, free T4, reverse T3) and whether treatment with T4, T3, or a combination is appropriate.</p>
+        <div class="result-detail">
+          <h4>Recommended Starting Point</h4>
+          <p>A free 15-minute consultation with Dr. Paul. No commitment required.</p>
+        </div>
+        <div class="result-next">
+          <h4>What happens next</h4>
+          <div class="next-step-list">
+            <div class="next-step"><span class="next-step-num">1</span><div><strong>Confirmation email</strong> — You'll receive a short intake form within 24 hours.</div></div>
+            <div class="next-step"><span class="next-step-num">2</span><div><strong>Complete your forms</strong> — Takes about 5 minutes at your own pace.</div></div>
+            <div class="next-step"><span class="next-step-num">3</span><div><strong>Dr. Paul reviews your info</strong> — He comes prepared so your consult time counts.</div></div>
+            <div class="next-step"><span class="next-step-num">4</span><div><strong>Clinic follows up</strong> — Next steps, labs, and your protocol coordinated for you.</div></div>
+          </div>
+        </div>
+        <div class="result-actions">
+          <a href="tel:+19549828378" class="btn btn-gold" style="width:100%;text-align:center;padding:1rem"><span class="cta-long">Call for an Appointment</span><span class="cta-short">Call</span> &middot; (954) 982-8378</a>
+          <a href="hormones/thyroid.html" style="font-size:.82rem;color:var(--text2);margin-top:.25rem">Read about thyroid care</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result: Thyroid + out of state telehealth — Florida-only, same as other hormone care -->
+    <div class="funnel-step" id="result-thyroid-oos">
+      <div class="result-box">
+        <div class="result-icon-wrap amber">⚡</div>
+        <h2>Here's What's Available for Thyroid</h2>
+        <p>Thyroid care by telehealth is available to Florida residents only. You're outside Florida and preferring remote care, so in-person at the Fort Lauderdale clinic is the path for thyroid. Peptide therapy and medical weight loss remain available by telehealth from any state.</p>
+        <div class="result-detail">
+          <h4>Your Options</h4>
+          <p><strong style="color:var(--text)">Available to you remotely:</strong> Peptide therapy, medical weight loss, growth hormone secretagogues<br><br><strong style="color:var(--text)">Florida residents or in-person only:</strong> Thyroid, testosterone (TRT), women's hormone therapy (BHRT)</p>
+        </div>
+        <div class="result-actions">
+          <a href="tel:+19549828378" class="btn btn-gold" style="width:100%;text-align:center;padding:1rem"><span class="cta-long">Call for an Appointment</span><span class="cta-short">Call</span> &middot; (954) 982-8378</a>
+          <a href="contact.html" style="font-size:.82rem;color:var(--text2);margin-top:.25rem">Contact the clinic</a>
+        </div>
+      </div>
+    </div>
+
     <p class="funnel-aside">Your answers are not stored or shared. This questionnaire is for routing only.<br>All medical evaluation is done by Dr. Paul Goodkin, DC. Clinical protocols supervised by Dr. Tom Macek, MD, Medical Director.</p>
   </div>
 </div>
@@ -309,7 +383,11 @@ function showResult() {
 
   // Determine which result to show
   let resultId;
-  if (location === 'visit') {
+  if (service === 'thyroid') {
+    if (location === 'visit') resultId = 'result-thyroid-visit';
+    else if (location === 'florida') resultId = 'result-thyroid-florida';
+    else resultId = 'result-thyroid-oos';
+  } else if (location === 'visit') {
     resultId = 'result-inperson';
   } else if (location === 'florida') {
     resultId = 'result-full';
